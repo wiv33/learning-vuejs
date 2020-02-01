@@ -84,7 +84,7 @@
                     if (err) {
                         return alert("There was an error deleting your photo: " + err.message);
                     }
-                    alert("Successfully deleted photo.");
+                    alert("Successfully deleted photo. [" + data + "]");
                     this.getFiles();
                     // viewAlbum(albumName);
                 });
