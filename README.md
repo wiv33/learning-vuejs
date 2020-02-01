@@ -33,5 +33,17 @@
 - [샘플 코드](https://ap-northeast-2.console.aws.amazon.com/cognito/code/)
   * 플랫폼을 선택(개발 언어 - javascript)
   * [Uploading Photos to Amazon S3 from a Browser](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/s3-example-photo-album.html)
-    * Step 에 맞춰 진행
-  
+    * Step 에 맞춰 진행 (조금 불친절한..)
+    
+## vue-cli
+
+> npm i -g @vue/cli
+ 
+> npm create vuetify
+ 
+> cd vuetify
+ 
+> yarn serve
+
+
+
