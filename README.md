@@ -34,4 +34,5 @@
   * 플랫폼을 선택(개발 언어 - javascript)
   * [javascript 개발자 안내서](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-started-browser.html)
     * Step 에 맞춰 진행
+    * [script latest](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/)
   
