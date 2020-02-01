@@ -46,4 +46,9 @@
 > yarn serve
 
 
+---
 
+### 주요 링크
+ - [버킷 콘솔](https://s3.console.aws.amazon.com/s3/home?region=ap-northeast-2)
+ - [업로드 참조 문서](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/s3-example-photo-album.html)
+ - [자격 증명 생성](https://ap-northeast-2.console.aws.amazon.com/cognito/home?region=ap-northeast-2)
