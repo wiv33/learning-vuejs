@@ -32,6 +32,6 @@
 ### 자격 증명 풀
 - [샘플 코드](https://ap-northeast-2.console.aws.amazon.com/cognito/code/)
   * 플랫폼을 선택(개발 언어 - javascript)
-  * [uploading photos](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/s3-example-photo-album.html)
+  * [Uploading Photos to Amazon S3 from a Browser](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/s3-example-photo-album.html)
     * Step 에 맞춰 진행
   
