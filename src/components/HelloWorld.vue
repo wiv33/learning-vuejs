@@ -1,5 +1,10 @@
 <template>
     <v-container>
+        <h1>파일 리스트</h1>
+        <div v-for="(file, index) in fileList" :key="file.Key">
+            #{{index + 1}} {{file.Key}}
+            <v-btn @click="deleteFile(file.Key)" color="red" icon>x</v-btn>
+        </div>
         <h1>파일 업로더</h1>
         <input id="file-selector" ref="uploadFile" type="file"
                @change="handleFileUpload()">
@@ -10,37 +15,38 @@
 <script>
     import AWS from 'aws-sdk';
 
-    import {consoleInfo} from "vuetify/es5/util/console";
-
     export default {
         data() {
             return {
+                s3 : null,
                 file: null,
+                fileList: [],
                 albumBucketName: "psawesome-photo-album",
                 bucketRegion: "ap-northeast-2",
                 IdentityPoolId: "Your IdentityPoolId Key",
             }
         },
+        created() {
+            AWS.config.update({
+                region: this.bucketRegion,
+                credentials: new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: this.IdentityPoolId
+                })
+            });
+
+            this.s3 = new AWS.S3({
+                apiVersion: "2006-03-01",
+                params: { Bucket: this.albumBucketName }
+            });
+
+            this.getFiles();
+        },
         methods: {
             handleFileUpload() {
-                consoleInfo(AWS);
                 this.file = this.$refs.uploadFile.files[0]
-                consoleInfo("파일이 업로드 되었습니다.", this.file);
-                consoleInfo(this.file);
+                // consoleInfo("파일이 업로드 되었습니다.", this.file);
             },
             uploadFile() {
-                AWS.config.update({
-                    region: this.bucketRegion,
-                    credentials: new AWS.CognitoIdentityCredentials({
-                        IdentityPoolId: this.IdentityPoolId
-                    })
-                });
-
-                // const s3 = new AWS.S3({
-                //     apiVersion: "2006-03-01",
-                //     params: { Bucket: this.albumBucketName }
-                // });
-
                 let photoKey = this.file.name;
 
                 // Use S3 ManagedUpload class as it supports multipart uploads
@@ -57,12 +63,31 @@
 
                 promise.then(
                     (data) => {
-                        consoleInfo(data);
-                        alert("Successfully uploaded photo.");
+                        alert("Successfully uploaded photo [" + data + "]");
+                        this.getFiles();
                         // viewAlbum(albumName);
                     }
-                ).catch(err => alert("There was an error uploading your photo: ", err.message));
+                ).catch(err => alert("There was an error uploading your photo: " + err.message));
 
+            },
+            getFiles() {
+                this.s3.listObjects({ Delimiter: "/" }, (err, data) => {
+                    if (err) {
+                        return alert("There was an error listing your albums: " + err.message);
+                    } else {
+                        this.fileList = data.Contents;
+                    }
+                });
+            },
+            deleteFile(key) {
+                this.s3.deleteObject({ Key: key }, (err, data) => {
+                    if (err) {
+                        return alert("There was an error deleting your photo: " + err.message);
+                    }
+                    alert("Successfully deleted photo.");
+                    this.getFiles();
+                    // viewAlbum(albumName);
+                });
             }
         }
     }
