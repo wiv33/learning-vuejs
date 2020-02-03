@@ -1,20 +1,12 @@
-# portfolio
 
-## Build Setup
+# STATIC
 
-```bash
-# install dependencies
-$ yarn install
+**This directory is not required, you can delete it if you don't want to use it.**
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+This directory contains your static files.
+Each file inside this directory is mapped to `/`.
+Thus you'd want to delete this README.md before deploying to production.
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+Example: `/static/robots.txt` is mapped as `/robots.txt`.
 
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/assets#static).
