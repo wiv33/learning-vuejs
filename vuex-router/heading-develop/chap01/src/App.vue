@@ -4,6 +4,7 @@
     <p>{{ count }}</p>
     <button @click="count++">추가</button>
     <HomeVue></HomeVue>
+    <app-status></app-status>
   </div>
 </template>
 
