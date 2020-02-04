@@ -1,16 +1,13 @@
 <template>
-    <div>
-        <app-status></app-status>
-        <h1>{{ homeTitle }}</h1>
-    </div>
+    <h2> {{ title }}</h2>
 </template>
 
 <script>
     export default {
-        name: "Home",
+        name: "StatusVue",
         data() {
             return {
-                homeTitle: "홓홓홓"
+                title: "상태 좋습니다."
             }
         }
     }
