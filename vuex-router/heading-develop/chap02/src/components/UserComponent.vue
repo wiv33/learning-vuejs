@@ -1,11 +1,12 @@
 <template>
     <div class="blue lighten-3 pa-3">
         <h1>User Component</h1>
-        <p>Name: Vue-js</p>
+        <p>Name: {{ name }}</p>
+        <v-btn dark @click="changeName()">Change Name</v-btn>
         <hr>
         <v-layout row wrap>
             <v-flex xs12 sm6>
-                <UserDetail></UserDetail>
+                <UserDetail :nameOfChild="name"></UserDetail>
             </v-flex>
             <v-flex xs12 sm6>
                 <UserEdit></UserEdit>
@@ -22,6 +23,16 @@
         name: "UserComponent",
         components: {
             UserDetail, UserEdit
+        },
+        data() {
+            return {
+                name: "Vue-JS"
+            }
+        },
+        methods: {
+            changeName() {
+                this.name = "Hello Vue";
+            }
         }
     }
 </script>
