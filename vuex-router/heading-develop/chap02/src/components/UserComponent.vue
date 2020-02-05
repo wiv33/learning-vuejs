@@ -6,6 +6,10 @@
         <hr>
         <v-layout row wrap>
             <v-flex xs12 sm6>
+                <!--
+                    자식의 props 배열에 선언된 nameOfChild 와 바인딩 선언.
+                    바인딩 된 속성에 부모 값인 name 을 대입.
+                 -->
                 <UserDetail :nameOfChild="name"></UserDetail>
             </v-flex>
             <v-flex xs12 sm6>
