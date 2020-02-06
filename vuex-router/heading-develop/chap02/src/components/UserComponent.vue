@@ -24,7 +24,7 @@
                         :address="address"
                         :phone="phone"
                         :hasDog="hasDog"
-                        @child="parents()"
+                        @child="parents"
                 ></UserEdit>
             </v-flex>
         </v-layout>
@@ -52,8 +52,12 @@
             changeName() {
                 this.name = "Hello Vue";
             },
-            parents() {
-                window.console.log("Helllllll");
+            parents(user) {
+                this.name = user.name;
+                this.address = user.address;
+                this.phone = user.phone;
+                this.hasDog = user.hasDog;
+                window.console.log(user);
             }
         }
     }
