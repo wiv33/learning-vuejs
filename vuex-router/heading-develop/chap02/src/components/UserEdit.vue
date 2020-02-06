@@ -41,7 +41,7 @@
         methods: {
             changeUser() {
                 window.console.log("check");
-                this.$emit('child');
+                this.$emit('child', this.user);
             }
         }
     }
