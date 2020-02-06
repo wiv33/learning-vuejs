@@ -2,6 +2,7 @@
     <div class="red lighten-3 pa-3">
         <h3>회원정보 확인</h3>
         <p>{{ nameOfChild }}</p>
+        <p>{{ helloWorld }}</p>
     </div>
 </template>
 
@@ -19,6 +20,11 @@
         data() {
             return {
 
+            }
+        },
+        computed: {
+            helloWorld() {
+                return this.nameOfChild + " plus";
             }
         }
     }
