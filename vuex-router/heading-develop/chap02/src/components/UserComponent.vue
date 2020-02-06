@@ -10,7 +10,13 @@
                     자식의 props 배열에 선언된 nameOfChild 와 바인딩 선언.
                     바인딩 된 속성에 부모 값인 name 을 대입.
                  -->
-                <UserDetail :name-of-child="name"></UserDetail>
+<!--                <UserDetail :name-of-child="name"></UserDetail>-->
+                <UserDetail
+                        :name="name"
+                        :address="address"
+                        :phone="phone"
+                        :hasDog="hasDog"
+                ></UserDetail>
             </v-flex>
             <v-flex xs12 sm6>
                 <UserEdit></UserEdit>
@@ -30,7 +36,10 @@
         },
         data() {
             return {
-                name: "Vue-JS"
+                name: "Vue-JS",
+                address: "Seoul",
+                phone: "10-5252-2323",
+                hasDog: true
             }
         },
         methods: {
