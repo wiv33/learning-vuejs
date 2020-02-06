@@ -9,7 +9,13 @@
     export default {
         name: "UserDetail",
         /* parent 가 보내준 name 을 nameOfChild 로 받는다. */
-        props: ['nameOfChild'],
+        props: {
+            nameOfChild: {
+                type: String,
+                // required: true,
+                default: "PROTOCOL"
+            }
+        },
         data() {
             return {
 
