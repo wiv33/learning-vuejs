@@ -19,7 +19,13 @@
                 ></UserDetail>
             </v-flex>
             <v-flex xs12 sm6>
-                <UserEdit></UserEdit>
+                <UserEdit
+                        :name="name"
+                        :address="address"
+                        :phone="phone"
+                        :hasDog="hasDog"
+                        @child="parents()"
+                ></UserEdit>
             </v-flex>
         </v-layout>
     </div>
@@ -45,6 +51,9 @@
         methods: {
             changeName() {
                 this.name = "Hello Vue";
+            },
+            parents() {
+                window.console.log("Helllllll");
             }
         }
     }
