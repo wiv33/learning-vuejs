@@ -24,7 +24,7 @@
             </v-list-item>
             <v-list-item>
                 <v-list-item-content>수정 일자:</v-list-item-content>
-                <v-list-item-content class="align-end">{{ editedDate }}</v-list-item-content>
+                <v-list-item-content class="align-end">{{ getDateAndTime(editedDate) }}</v-list-item-content>
             </v-list-item>
         </v-list>
     </div>
@@ -32,6 +32,8 @@
 
 <script>
     import { eventBus } from '../main';
+    import { dateFormat } from "../../mixins/dateFormat";
+
 
     export default {
         name: "UserDetail",
@@ -53,14 +55,26 @@
         methods: {
             switchName() {
                 this.nameOfChild = "switch";
-            }
+            },
+            // getDateAndTime(dateParam) {
+            //     if ( dateParam == null) {
+            //         return null;
+            //     }
+            //     let hour = dateParam.getHours();
+            //     let minutes = dateParam.getMinutes();
+            //     const fullDate = `${dateParam.getFullYear()}-${dateParam.getMonth() + 1}-${dateParam.getDate()}`;
+            //     return `${fullDate} ${hour}:${minutes}`
+            // }
+
         },
         created() {
+            window.console.log(`i am user detail`);
             eventBus.$on('userWasEdited', (dateParam) => {
                 this.editedDate = dateParam;
                 window.console.log(dateParam);
             })
-        }
+        },
+        mixins: [dateFormat]
     }
 </script>
 
