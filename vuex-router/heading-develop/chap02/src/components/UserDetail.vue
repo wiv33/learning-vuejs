@@ -22,17 +22,25 @@
                 <v-list-item-content>반려견 유무:</v-list-item-content>
                 <v-list-item-content class="align-end">{{ hasDogFunc }}</v-list-item-content>
             </v-list-item>
+            <v-list-item>
+                <v-list-item-content>수정 일자:</v-list-item-content>
+                <v-list-item-content class="align-end">{{ editedDate }}</v-list-item-content>
+            </v-list-item>
         </v-list>
     </div>
 </template>
 
 <script>
+    import { eventBus } from '../main';
+
     export default {
         name: "UserDetail",
         /* parent 가 보내준 name 을 nameOfChild 로 받는다. */
         props: ['name', 'address', 'phone', 'hasDog', 'nameOfChild'],
         data() {
-            return {}
+            return {
+                editedDate: null
+            }
         },
         computed: {
             helloWorld() {
@@ -46,6 +54,12 @@
             switchName() {
                 this.nameOfChild = "switch";
             }
+        },
+        created() {
+            eventBus.$on('userWasEdited', (dateParam) => {
+                this.editedDate = dateParam;
+                window.console.log(dateParam);
+            })
         }
     }
 </script>
