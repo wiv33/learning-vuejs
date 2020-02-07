@@ -23,7 +23,7 @@
 </template>
 
 <script>
-    import {EventBus} from '../main';
+    import {eventBus} from '../main';
 
     export default {
         name: "UserEdit",
@@ -43,7 +43,7 @@
         methods: {
             changeUser() {
                 this.$emit('child', this.user);
-                EventBus.$emit('userWasEdited', new Date())
+                eventBus.$emit('userWasEdited', new Date())
             }
         }
     }
