@@ -23,6 +23,8 @@
 </template>
 
 <script>
+    import {EventBus} from '../main';
+
     export default {
         name: "UserEdit",
         props: ['name', 'address', 'phone', 'hasDog'],
@@ -40,8 +42,8 @@
         },
         methods: {
             changeUser() {
-                window.console.log("check");
                 this.$emit('child', this.user);
+                EventBus.$emit('userWasEdited', new Date())
             }
         }
     }
