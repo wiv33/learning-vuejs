@@ -2,6 +2,8 @@
     <div class="blue lighten-3 pa-3">
         <h1>User Component</h1>
         <p>Name: {{ name }}</p>
+        <p>{{ createdAt }}</p>
+        <p>{{ helloToMixin }}</p>
         <v-btn dark @click="changeName()">Change Name</v-btn>
         <hr>
         <v-layout row wrap>
@@ -34,9 +36,15 @@
 <script>
     import UserEdit from "./UserEdit";
     import UserDetail from "./UserDetail";
+    import { dateFormat } from "../../mixins/dateFormat";
 
     export default {
         name: "UserComponent",
+        computed: {
+            helloToMixin() {
+                return this.mixinData + ' 안녕하시오!';
+            },
+        },
         components: {
             UserDetail, UserEdit
         },
@@ -45,7 +53,8 @@
                 name: "Vue-JS",
                 address: "Seoul",
                 phone: "10-5252-2323",
-                hasDog: true
+                hasDog: true,
+                createdAt: null,
             }
         },
         methods: {
@@ -58,8 +67,19 @@
                 this.phone = user.phone;
                 this.hasDog = user.hasDog;
                 window.console.log(user);
+            },
+            getDateAndTime(dateParam) {
+                window.console.log("이것이 실행되잖아");
+                let hour = dateParam.getHours();
+                let minutes = dateParam.getMinutes();
+                const fullDate = `${dateParam.getFullYear()}-${dateParam.getMonth() + 1}-${dateParam.getDate()}`;
+                return `${fullDate} ${hour}:${minutes}`
             }
-        }
+        },
+        created() {
+            this.createdAt = this.getDateAndTime(new Date());
+        },
+        mixins: [dateFormat]
     }
 </script>
 

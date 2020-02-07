@@ -7,7 +7,13 @@ import "@babel/polyfill";
 
 Vue.config.productionTip = false;
 
-export const eventBus = new Vue();
+export const eventBus = new Vue({
+  methods: {
+    userWasEditedFunc(dateParam) {
+      this.$emit('userWasEdited', dateParam);
+    }
+  }
+});
 
 new Vue({
   router,
