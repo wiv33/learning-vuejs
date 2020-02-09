@@ -19,11 +19,10 @@ export default new Vuex.Store({
     percentOfSeoul: (state, getters) => Math.round(getters.countOfSeoul / getters.allUsersCount * 100)
   },
   mutations: {
-    addUsers: (state, payload) => {
-      state.allUsers.push(payload)
-    }
+    addUsers: (state, payload) => state.allUsers.push(payload)
   },
   actions: {
-
+    // context.commit => {commit}
+    addUsers: ({commit}, payload) => commit('addUsers', payload)
   }
 })
