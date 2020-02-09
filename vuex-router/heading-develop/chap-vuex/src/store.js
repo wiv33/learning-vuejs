@@ -12,7 +12,7 @@ export default new Vuex.Store({
     ]
   },
   getters: {
-    allUsersCount(state) {
+    allUsersCount: (state) => {
       return state.allUsers.length;
     }
   },
