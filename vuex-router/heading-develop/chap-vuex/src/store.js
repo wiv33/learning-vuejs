@@ -13,8 +13,10 @@ export default new Vuex.Store({
   },
   getters: {
     allUsersCount: (state) => {
-      return state.allUsers.length;
-    }
+      return state.allUsers.length
+    },
+    countOfSeoul: state => state.allUsers.filter(user => user.address === 'Seoul').length,
+    percentOfSeoul: (state, getters) => Math.round(getters.countOfSeoul / getters.allUsersCount * 100)
   },
   mutations: {
 
