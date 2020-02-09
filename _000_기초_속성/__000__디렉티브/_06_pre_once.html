@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <title>pre and once</title>
+</head>
+<body>
+    <div id="app">
+        <span v-pre>{{message}}</span>
+    </div>
+
+    <div id="once">
+        <span v-once>{{message}}</span>
+        <button v-on:click="changeMessage">메시지 변경 시도 후 Vue Data를 확인하세요.</button>
+    </div>
+</body>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: 'Hello World!!'
+        }
+    })
+
+    const once = new Vue({
+        el: "#once",
+        data: {
+            message: "변경되지 않는 메시지"
+        },
+        methods: {
+            changeMessage() {
+                this.message = "실제 데이터는 변경되었습니다."
+            }
+        }
+    })
+</script>
+</html>
