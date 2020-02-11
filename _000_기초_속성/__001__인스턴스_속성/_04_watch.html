@@ -26,10 +26,13 @@
             color: yellow;
             background-color: purple;
         }
+        [v-cloak] {
+            display: none;
+        }
     </style>
 </head>
 <body>
-<div id="app">
+<div id="app" v-cloak>
     <p>
         이름 : <input type="text" v-model="name" placeholder="두글자 이상을 입력하세요"/>
     </p>
