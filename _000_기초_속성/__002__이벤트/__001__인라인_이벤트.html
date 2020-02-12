@@ -17,7 +17,7 @@
     <p><input type="number" v-model="amount" class="form-control" /></p>
     <p>
         <button id="deposit" @click="balance += parseInt(amount)" class="btn btn-primary">예금</button>
-        <button id="withdraw" @click="balance -= parseInt(amount)" class="btn btn-primary">인출</button>
+        <button id="withdraw" @click="balance -= (balance < 0 ? 0 : parseInt(amount) < balance ? parseInt(amount) : balance)" class="btn btn-primary">인출</button>
     </p>
     <h3>계좌 잔고 : {{balance}}</h3>
 </div>
