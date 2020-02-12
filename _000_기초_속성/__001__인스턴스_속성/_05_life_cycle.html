@@ -22,6 +22,12 @@
                 num: 0
             }
         },
+        created() {
+            console.log("created");
+        },
+        updated() {
+            console.log("updated");
+        },
         computed: {
             sum() {
                 const number = Number(this.num);
