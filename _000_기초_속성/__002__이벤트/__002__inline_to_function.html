@@ -13,12 +13,14 @@
     </style>
 </head>
 <body>
-<div id="app" class="container layout1">
+<div id="app" class="container layout1" @mousedown="mouseTest">
     <p><input type="number" v-model="amount" class="form-control" /></p>
     <p>
         <button id="deposit" @click="deposit" class="btn btn-primary">예금</button>
         <button id="withdraw" @click="withdraw" class="btn btn-primary">인출</button>
     </p>
+    <input type="text" @keydown="keyCodeTest" placeholder="keydown check">
+    <input type="text" @keypress="keyPressTest" placeholder="keypress check">
     <h3>계좌 잔고 : {{balance}}</h3>
 </div>
 </body>
@@ -33,6 +35,7 @@
         },
         methods: {
             deposit(e) {
+                console.log(e)
                 const amount = Number(this.amount);
                 !(amount > 0) ? alert("0보다 큰 값을 예금할 수 있습니다.") : (this.balance += amount)
             },
@@ -41,6 +44,17 @@
                 !(amount > 0) ? alert("0보다 큰 값을 인출할 수 있습니다.") :
                     this.balance < amount ? alert("인출 가능 금액을 초과하였습니다.") : this.balance -= amount
 
+            },
+            keyCodeTest(e) {
+                console.log(e.keyCode)
+            },
+            keyPressTest(e) {
+                console.log(e.charCode)
+                console.log(e.location);
+            },
+            mouseTest(e) {
+                // console.log(e.button);
+                console.log(e.buttons);
             }
         }
     })
