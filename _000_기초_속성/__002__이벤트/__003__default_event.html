@@ -14,7 +14,7 @@
     <title>e.preventDefault</title>
 </head>
 <body>
-<div id="app" @contextmenu="ctxStop">
+<div id="app" @contextmenu.prevent="ctxStop">
     <a href="https://github.com/wiv33" @click="confirmFB">Go to the Github Repository!</a>
 </div>
 
@@ -25,7 +25,7 @@
         el: "#app",
         methods: {
             ctxStop(e) {
-                e.preventDefault();
+                console.log(e);
             },
             confirmFB(e) {
                 if (!confirm("Go to the Github Repository!")) {
