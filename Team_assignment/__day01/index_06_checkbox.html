@@ -5,30 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
     <title>CheckBox</title>
 </head>
 <body>
-<!-- myEatList에 선택된 과일을 li로 출력합니다. -->
-<input type="checkbox" id="apple" value="apple" v-model="myEatList"><label for="apple">사과</label>
-<input type="checkbox" id="strawberry" value="strawberry" v-model="myEatList"><label for="strawberry">딸기</label>
-<input type="checkbox" id="grape" value="grape" v-model="myEatList"><label for="grape">포도</label>
-<input type="checkbox" id="melon" value="melon" v-model="myEatList"><label for="melon">멜론</label>
-<input type="checkbox" id="pineapple" value="pineapple" v-model="myEatList"><label for="pineapple">파인애플</label>
-<input type="checkbox" id="mango" value="mango" v-model="myEatList"><label for="mango">망고</label>
+<!-- myEatList에 선택된 과일을 하나씩 li로 감싸서 출력합니다. -->
 <ul>
-    <li for="" :key="fruit"></li>
+    <li></li>
 </ul>
-<div id="app"></div>
 </body>
-<script>
-    new Vue({
-        el: "#app",
-        data() {
-            return {
-                myEatList: []
-            }
-        }
-    })
-</script>
 </html>
