@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <title>Mouse Event</title>
+</head>
+<body>
+<!-- 버튼에 마우스를 올렸을 때 아래의 조건을 만족시키세요.
+    1. 버튼의 backgroundColor : red
+        Text의 colot : white
+
+    2. 마우스가 떠났을 때 본래의 색을 찾아야합니다.
+    3. #want에 컬러를 입력하고 Enter를 입력한 경우,
+        입력한 색상으로 반영합니다.
+        참고: 사용자가 스펠링 틀린건 무시합니다.
+        ex) pinp 는 변화 없어도 됨.
+-->
+<div id="app">
+    <label for="a" v-model:style="myStyle">Text Button</label>
+    <input type="button" id="a" class="fake-button" mouseover="overEvent" mouseout="outEvent">
+    <input type="text" v-bind:myColor="myColor" keypress="enterEvent">
+</div>
+</body>
+<script>
+    const app = new Vue({
+        data: () => ({
+            myColor: "",
+            myStyle: {
+                backgroundColor: this.myColor,
+                border: "solid 1px green",
+                width: "100px",
+                textAlign: "center"
+            }
+        }),
+        methods: {
+            enterEvent() {
+
+            },
+            overEvent: function () {
+                this.myColor = "purple";
+                this.myStyle.color = "yellow";
+            },
+            outEvent: function () {
+                this.myColor = "pink";
+                this.myStyle.color = "black";
+            }
+        }
+    })
+</script>
+</html>
