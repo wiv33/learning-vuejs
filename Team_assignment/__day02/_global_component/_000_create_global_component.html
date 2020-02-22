@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <title>전역 Component 선언하기</title>
+</head>
+<!-- 아래의 두 객체 (temp, temp2)를 활용하여
+    전역 컴포넌트 두 개를 생성하고,
+     객체의 text를 화면에 출력하세요.
+-->
+<body>
+<my-first-component></my-first-component>
+<my-second-component my-msg="my second component@@@"></my-second-component>
+</body>
+<script>
+    temp = {
+        template: '<div>my first component!</div>'
+    }
+    temp2 = '<div>{{myMsg}}</div>';
+
+    Vue.component('my-first-component');
+
+
+    new Vue({
+        el: "#app",
+    })
+</script>
+</html>
