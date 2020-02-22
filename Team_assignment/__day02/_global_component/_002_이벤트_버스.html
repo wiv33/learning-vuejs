@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <title>Event Bus</title>
+</head>
+<body>
+<!--이벤트 버스를 활용하여 전달하기-->
+<!--과제 내주기 전에 포인트 지점 삭제 필요-->
+<!--과제 푸는 사람 수준에 맞춰 삭제할 예정-->
+
+<div id="app">
+    <my-child-component></my-child-component>
+</div>
+</body>
+<script>
+    const eventBus = new Vue();
+
+    const template = '<button @click="occurredEvent">Click Me!</button>';
+    Vue.component('my-child-component', {
+        template: template,
+        methods: {
+            occurredEvent() {
+                eventBus.$emit('go-to-bus', "this is for you");
+            }
+        }
+    });
+
+    const app = new Vue({
+        el: "#app",
+        created: () => {
+            eventBus.$on('go-to-bus', (val) => {
+                alert(val);
+            })
+        }
+    })
+</script>
+</html>

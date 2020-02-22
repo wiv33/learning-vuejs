@@ -9,29 +9,24 @@
     <title>전역 Component 선언하기</title>
 </head>
 <!-- 아래의 두 객체 (temp, temp2)를 활용하여
-    1. 전역 컴포넌트 두 개를 생성하고,
-    2. root와 root2에 정상 작동하도록 등록하세요.
+    전역 컴포넌트 두 개를 생성하고,
+     객체의 text를 화면에 출력하세요.
 -->
-
 <body>
-    <my-first-component></my-first-component>
-    <my-second-component my-msg="my second root component@@@"></my-second-component>
-
-    <my-first-component></my-first-component>
-    <my-second-component my-msg="root2 child component!!!"></my-second-component>
+<my-first-component></my-first-component>
+<my-second-component my-msg="my second component@@@"></my-second-component>
 </body>
 <script>
-    // 고칠 수 없음::start
     temp = {
         template: '<div>my first component!</div>'
     }
     temp2 = '<div>{{myMsg}}</div>';
-    // 고칠 수 없음::end
+
     Vue.component('my-first-component');
 
-    // 고칠 수 없음::start
-    new Vue().$mount("#root")
-    new Vue().$mount("#root2")
-    // 고칠 수 없음::end
+
+    new Vue({
+        el: "#app",
+    })
 </script>
 </html>
