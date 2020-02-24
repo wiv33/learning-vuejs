@@ -5,9 +5,23 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
     <title>TITLE</title>
 </head>
 <body>
 <!-- 이벤트 1회만 발생 -->
+<div id="app">
+    <button>Click Me!</button>
+</div>
 </body>
+<script>
+    new Vue({
+        el: "#app"
+        ,methods: {
+            btnClick() {
+                alert("한 번만 확인됩니다.");
+            }
+        }
+    })
+</script>
 </html>
