@@ -69,6 +69,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL + '/learning-vuejs' || 'http://localhost:3000'
   }
 }
