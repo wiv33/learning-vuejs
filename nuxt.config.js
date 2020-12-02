@@ -6,7 +6,10 @@ export default {
   generate: {
     fallback: true
   },
-  buildDir: "docs",
+  target: 'static',
+  router: {
+    base: '/learning-vuejs/'
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - portfolio',
