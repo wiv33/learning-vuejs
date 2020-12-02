@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <title>TITLE</title>
+</head>
+<body>
+<!--
+    당첨된 숫자 인덱스 3번의 숫자를
+    3으로 변경해줍니다.
+-->
+<div id="app">
+    당첨 숫자
+    <div id="결과창">
+        <ul>
+            <li v-for="ball in winBalls" :key="ball" :number="ball">{{ball}}</li>
+        </ul>
+    </div>
+    <button @click="changeOneBall">Check One Ball</button>
+</div>
+</body>
+<script>
+
+    function getWinNumbers() {
+        const candidate = Array(45).fill().map((v, i) => i + 1);
+        const shuffle = [];
+        while (candidate.length > 0) {
+            let number = Math.random();
+            let x = number * candidate.length;
+            let start = Math.floor(x);
+            let numbers = candidate.splice(start, 1);
+            let number1 = numbers[0];
+            shuffle.push(number1);
+        }
+        const bonusNumber = shuffle[shuffle.length - 1];
+        const winNumbers = shuffle.slice(0, 6).sort((p, c) => p - c);
+        return [...winNumbers, bonusNumber];
+    }
+
+    const app = new Vue({
+        el: "#app",
+        data: () => ({
+            winBalls: getWinNumbers()
+        }),
+        methods:{
+            changeOneBall() {
+
+            }
+        }
+    })
+</script>
+</html>
