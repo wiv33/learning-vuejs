@@ -69,6 +69,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    publicPath: 'https://wiv33.github.io/learning-vuejs/'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   }
 }
