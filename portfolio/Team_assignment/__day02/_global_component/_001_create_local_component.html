@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <title>Local Component</title>
+</head>
+<body>
+<!-- 각각의 컴포넌트를 이름과 알맞게 장착하세요. -->
+
+<div id="app"></div>
+<div id="root"></div>
+<div id="root2"></div>
+</body>
+<script>
+    appComponent = '<div>app child</div>'
+
+    myFirstLocalComponent = {
+        template: '<div>활성 가능한 상태에서 보입니다.</div>'
+    }
+    mySecondLocalComponent = {
+        template: '<div>활성화 중</div>'
+    }
+
+    Vue.$mount()
+
+    Vue.$mount()
+
+    Vue.$mount().$mount("#app");
+</script>
+</html>

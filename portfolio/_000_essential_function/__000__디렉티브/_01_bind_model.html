@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <title>v-bind and v-model</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model:value="message" placeholder="원하는 글을 입력하세요.">
+        <br>
+        <h2 v-text="message"></h2>
+        <img v-bind:src="imgPath" alt="text_and_html 의 결과 이미지" :style="resultStyle">
+    </div>
+</body>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                message: '',
+                imgPath: 'resources/results_img/01.PNG',
+                resultStyle: 'width: 900px'
+            }
+        }
+    })
+</script>
+</html>
