@@ -6,6 +6,7 @@ export default {
   generate: {
     fallback: true
   },
+  buildDir: "docs",
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - portfolio',
@@ -69,6 +70,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    baseUrl: process.env.BASE_URL + '/learning-vuejs' || 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   }
 }
