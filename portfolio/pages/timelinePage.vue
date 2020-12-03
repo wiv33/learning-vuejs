@@ -97,7 +97,7 @@ export default {
           skill: 'mybatis, java, jquery, jenkins, apache'
         },
         {
-          date: '2018-02 ~ 2018-10',
+          date: '2018-02 ~ 2018-08',
           workTitle: '국비지원 - KH 정보교육원 수료',
           workDescription: '처음 웹 개발을 시작한 학원이며, 가장 흔한 온라인 중고 쇼핑몰 주제로 흔하지 않은 ' +
               '`결제`, `운송장 조회` 기능을 구현하였고, 제 PC에 도메인을 연결하여 서비스 오픈으로 프로젝트를 성공적으로 마쳤습니다.' +
