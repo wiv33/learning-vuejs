@@ -44,6 +44,13 @@
           >
             SKILL
           </v-btn>
+          <v-btn
+            color="pink"
+            nuxt
+            to="/timelinePage"
+          >
+            TIMELINE
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-col>

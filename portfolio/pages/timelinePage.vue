@@ -47,7 +47,7 @@ export default {
           skill: `AWS, GCP, kubernetes`
         },
         {
-          date: '2020-06 ~ 2020-07',
+          date: '2020-06 ~ 2020-07 (재직중)',
           workTitle: '중앙 데일리 WCMS 및 서비스 고도화',
           workDescription: `읽기 어려운 코드가 많다고 판단하여 고도화 기간을 추가하여 Spring 기반의 자체 framework를 추가하여 고도화를 마무리 하였습니다.
           주로 리팩터링의 방향 제안과 공통화를 수행하였습니다.`,
