@@ -1,0 +1,116 @@
+<template>
+  <v-timeline>
+    <v-timeline-item
+        v-for="t in timelines"
+        :key="t"
+        color="red lighten-2"
+        large
+    >
+      <template v-slot:opposite>
+        <span>{{ t.date }}</span>
+        <br />
+        <span>{{ t.workTitle }}</span>
+      </template>
+      <v-card class="elevation-2">
+        <v-card-title class="headline">{{ t.skill }}</v-card-title>
+        <v-card-text>
+          {{ t.workDescription }}
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+  </v-timeline>
+</template>
+
+<script>
+export default {
+  name: "timelineComponent",
+  data() {
+    return {
+      timelines: [
+        {
+          date: '2020-09 ~ 2020-11 (재직중)',
+          workTitle: '위아자 웹 개편',
+          workDescription: `위아자 웹 개편과 동시에 WCMS 기능의 확장을 하였으며, 유연함이 필요한 구간의 java, js 기능을 구현하였습니다.`,
+          skill: `mocha, chai, JS`
+        },
+        {
+          date: '2020-08 ~ 2020-10 (재직중)',
+          workTitle: '중앙일보 타임라인 파티클 개발',
+          workDescription: '기사에서 시간 흐름에 따라 한 사건을 정의할 때 용이한 파티클이며, jquery와 js 작업이 주를 이루었습니다.',
+          skill: 'jquery, js, java'
+        },
+        {
+          date: '2020-07 ~ 2020-08 (재직중)',
+          workTitle: '인프라 팀과 kubernetes 공유',
+          workDescription: `컨테이너화가 대두되면서 인프라 팀에서 swam 구축을 진행하였고, docker-compose 습득 이후 kubernetes 공부하던 시기가 맞아서
+          kubernetes 기본적인 아키텍처를 공유하였고, 데모 환경에서 web deploy를 가이드하였습니다.`,
+          skill: `AWS, GCP, kubernetes`
+        },
+        {
+          date: '2020-06 ~ 2020-07',
+          workTitle: '중앙 데일리 WCMS 및 서비스 고도화',
+          workDescription: `읽기 어려운 코드가 많다고 판단하여 고도화 기간을 추가하여 Spring 기반의 자체 framework를 추가하여 고도화를 마무리 하였습니다.
+          주로 리팩터링의 방향 제안과 공통화를 수행하였습니다.`,
+          skill: `refactoring, mocha, chai`
+
+        },
+        {
+          date: '2020-02 ~ 2020-05 (재직중)',
+          workTitle: '중앙 데일리 WCMS 및 서비스 화면 개발',
+          workDescription: `중앙 데일리 측에서 외주를 통해 구축하려고 했지만, 지속적인 이탈로 인해 저희 팀이 투입하여 개발을 진행하였습니다.
+          기자가 메인 페이지에 원하는 기사를 손쉽게 구성할 수 있도록 validation, mapping 작업, elasticsearch API 메서드 공통화,
+          외주 업체 환경 구축 및 gradle 설정, jenkins 및 gitlab, 자동 배포 설정을 구현하였습니다. 추가로 많이한 작업은 개발자들의 JS, java 중복 코드를
+          제거하는 작업이었습니다.`,
+          skill: `elasticsearch, mocha, chai, refactoring,`
+        },
+        {
+          date: '2019-11 ~ 2019-12 (재직중)',
+          workTitle: 'Vue.js study',
+          workDescription: `2020년에 중앙 데일리 WCMS 및 서비스 화면 구축을 대비한 Vue.js 스터디를 진행하였습니다.
+          당시 vue life cycle, 기본 함수 및 webpack을 활용한 프로젝트 구축을 팀원에게 설명하며 같이 성장하였습니다.`,
+          skill: `vue.js, JS`
+        },
+        {
+          date: '2019-07 ~ 2019-10 (재직중)',
+          workTitle: '비디오 클라우드 API 개발',
+          workDescription: `유료로 사용중인 동영상 아카이브 회사가 타 회사로 인수되어 동영상 업로드 및 메타데이터 수정 기능을 구현하였습니다.
+          AWS S3에 동영상 업로드의 back-end 개발을 하였고, 서버에 용량이 큰 영상을 남길 수 없기 때문에 OAuth Timeout, fail 시 영상 삭제,
+           callback 형태의 비동기 로직에 신경을 많이 썼습니다.`,
+          skill: `OAuth2.0, java, REST API`
+        },
+        {
+          date: '2019-04 ~ 2019-06 (재직중)',
+          workTitle: 'Highcharts 파티클 구현',
+          workDescription: '당시 중앙일보 홈페이지에서 동적인 웹 페이지로 가치를 높이기 위해 요구사항에 맞게 11개의 Highcharts를 구현하였습니다.',
+          skill: 'jquery, js, java'
+        },
+        {
+          date: '2019-02 ~ (재직중)',
+          workTitle: '중앙일보 JAM 기사제작 개발 및 유지보수',
+          workDescription: '시스템 확장 후 기사제작을 담당하게 되었고, 주로 JS, jquery작업을 하고 있습니다.',
+          skill: 'java, linux, jenkins, apache, elasticsearch'
+        },
+        {
+          date: '2018-10 ~ 2019-03 (재직중)',
+          workTitle: 'JTBC PLUS 매체확장 사업',
+          workDescription: '중앙일보의 JAM 시스템을 그룹사에서 사용하도록 확장하는 프로젝트에 투입되어, mssql 튜닝과 매체확장 시 발생한 오류를 해결하였습니다.',
+          skill: 'mybatis, java, jquery, jenkins, apache'
+        },
+        {
+          date: '2018-02 ~ 2018-10',
+          workTitle: '국비지원 - KH 정보교육원 수료',
+          workDescription: '처음 웹 개발을 시작한 학원이며, 가장 흔한 온라인 중고 쇼핑몰 주제로 흔하지 않은 ' +
+              '`결제`, `운송장 조회` 기능을 구현하였고, 제 PC에 도메인을 연결하여 서비스 오픈으로 프로젝트를 성공적으로 마쳤습니다.' +
+              ' 마지막 프로젝트 스케줄은 학원에서 다른 팀의 에러를 해결하고 집에서 저희 팀 프로젝트를 구현하며' +
+              ' 역량을 쌓았습니다.',
+          skill: '아임 포트(결제 모듈) 구현, 웹 기초 습득'
+        },
+      ]
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
