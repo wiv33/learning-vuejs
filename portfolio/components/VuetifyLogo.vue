@@ -2,7 +2,7 @@
   <img
     class="VuetifyLogo"
     alt="Vuetify Logo"
-    src="/learning-vuejs/vuetify-logo.svg"
+    src="/learning-vuejs/whoami.jpeg"
   >
 </template>
 

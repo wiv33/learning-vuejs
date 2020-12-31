@@ -28,11 +28,23 @@ export default {
     return {
       timelines: [
         {
-          date: '2019-02 ~ ',
-          workTitle: '위아자 웹 개편',
-          workDescription: `위아자 웹 개편과 동시에 WCMS 기능의 확장을 하였으며, 유연함이 필요한 구간의 java, js 기능을 구현하였습니다.`,
-          skill: `mocha, chai, JS`
-        }
+          date: '2019-02 ~ 재직중',
+          workTitle: '중앙그룹 WCMS 개발 및 운영',
+        },
+        {
+          date: '2021-01 ~ 2020-02',
+          workTitle: '각 프로젝트의 로그 통합 구축',
+          workDescription: 'ELK cluster 구축, 서비스 단위의 로그 통합 및 분류 - 분석을 위한 도메인 로그, 시스템 로그'
+        },
+        {
+          date: '2020-10 ~ 2020-12',
+          workTitle: '위아자 사이트 구축',
+        },
+        {
+          date: '2020-02 ~ 2020-05',
+          workTitle: '중앙데일리 서비스 및 WCMS 구축',
+          workDescription: 'gitlab, jenkins 서버 구축'
+        },
       ]
     }
   }
