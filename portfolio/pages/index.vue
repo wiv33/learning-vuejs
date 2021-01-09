@@ -36,7 +36,7 @@
           <v-btn
             color="primary"
             nuxt
-            to="/skill"
+            to="/skillPage"
           >
             SKILL
           </v-btn>
