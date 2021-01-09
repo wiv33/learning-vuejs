@@ -35,14 +35,12 @@
 </template>
 
 <script>
-import StarComponent from "./StarComponent";
-
 export default {
   name: "ImageComponent",
   data: () => ({
 
   }),
-  props: ['itemSrc', 'itemTitle', 'itemDescription', 'starCnt']
+  props: ['itemSrc', 'itemTitle', 'itemDescription']
 }
 </script>
 

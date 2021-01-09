@@ -29,7 +29,15 @@
                   :item-description="x.description"
                   :class="index"
               />
-              <StarComponent :star-cnt="x.starCnt"></StarComponent>
+              <StarComponent
+                  v-if="Object.keys(tabs).indexOf(index) % 2"
+                  :star-rating="x.starCnt"
+              ></StarComponent>
+
+              <PlainStarComponent
+                  v-else
+                  :star-rating="x.starCnt"
+              />
             </v-col>
           </v-row>
         </v-container>
@@ -40,13 +48,12 @@
 
 <script>
 // import ItemComponent  from '~/components/ItemComponent.vue'
-import ImageComponent from "../components/ImageComponent";
-import StarComponent  from "../components/StarComponent";
+import ImageComponent     from "../components/ImageComponent";
+import PlainStarComponent from "../components/PlainStarComponent";
+import StarComponent      from "../components/StarComponent";
 
 export default {
-  methods: () => {
-
-  },
+  methods: {},
   data() {
     return {
       activeTab: '',
@@ -163,6 +170,7 @@ export default {
     }
   },
   components: {
+    PlainStarComponent,
     StarComponent,
     ImageComponent,
     // ItemComponent

@@ -43,14 +43,14 @@ export default {
       {
         date: '2020-10 ~ 2020-12',
         workTitle: '위아자 사이트 개편',
-        workDescription: '개편 후 사용 ',
-        skill: 'java'
+        workDescription: '사용자 경험 최적화 후 나눔 물품의 신청 증가, 관리의 편의 증가',
+        skill: "java batch"
       },
       {
         date: '2020-02 ~ 2020-05',
         workTitle: '중앙데일리 서비스 및 WCMS 구축',
         workDescription: 'gitlab, jenkins 서버 구축 및 기사 파트 개발',
-        skill: 'java'
+        skill: "gitlab, jenkins, mocha testing"
       },
       {
         date: '2019-02 ~ 재직중',

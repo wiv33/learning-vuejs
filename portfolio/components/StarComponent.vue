@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <v-rating v-model="starCnt">
+    <v-rating v-model="starRating">
       <template v-slot:item="props">
         <v-icon
             :color="props.isFilled ? genColor(props.index) : 'grey lighten-1'"
@@ -21,7 +21,7 @@ export default {
     colors: ['white', 'green', 'orange', 'purple', 'pink'],
     // rating: 4.5,
   }),
-  props: ['starCnt'],
+  props: ['starRating'],
   methods: {
     genColor(i) {
       return this.colors[i]
