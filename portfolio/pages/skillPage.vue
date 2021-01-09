@@ -89,7 +89,7 @@ export default {
             description: `모놀리식 아키텍처에서 모듈화와 철저한 도메인 분리의 숙련도 이후, <br />
            성공할 수 있는 MSA를 위해 관련 지식과 구현을 습득하고 있습니다.`,
             starCnt: 4
-          }, {}
+          }
 
         ],
         'front-end': [
