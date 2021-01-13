@@ -105,19 +105,25 @@ export default {
           icon: 'mdi-apps',
           title: 'INTRODUCE',
           to: '/',
-          color: 'white'
+          color: 'white darken-2'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'SKILL',
           to: '/skillPage',
-          color: 'pink'
+          color: 'pink darken-2'
         },
         {
           icon: 'mdi-timeline-alert',
           title: 'TIMELINE',
           to: '/timelinePage',
-          color: 'purple'
+          color: 'purple darken-2'
+        },
+        {
+          icon: 'mdi-trending-up',
+          title: 'ML',
+          to: '/machineLearningPage',
+          color: 'yellow darken-2'
         }
       ],
       miniVariant: false,
