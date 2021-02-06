@@ -36,9 +36,9 @@ export default {
     timelines: [
       {
         date: '2021-01 ~ 2020-02',
-        workTitle: '각 Application 로그 통합 구축',
-        workDescription: 'ELK cluster 구축, 서비스 단위의 로그 통합 및 분류 - 분석을 위한 도메인 로그, 시스템 로그',
-        skill: 'Elastic stack, nuxt'
+        workTitle: 'Application 로그 통합',
+        workDescription: '로그용 ELK 구축',
+        skill: 'Elastic stack'
       },
       {
         date: '2020-10 ~ 2020-12',
@@ -50,7 +50,7 @@ export default {
         date: '2020-02 ~ 2020-05',
         workTitle: '중앙데일리 서비스 및 WCMS 구축',
         workDescription: 'gitlab, jenkins 서버 구축 및 기사 파트 개발',
-        skill: "gitlab, jenkins, mocha testing"
+        skill: "gitlab, jenkins, mocha, junit4 testing guide"
       },
       {
         date: '2019-02 ~ 재직중',

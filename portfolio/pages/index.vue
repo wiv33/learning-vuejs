@@ -7,12 +7,12 @@
       </div>
       <v-card>
         <v-card-title class="headline">
-          <p>안녕하세요.</p><br/>
-          <p>효율을 위해 의견을 제시하며 성장을 위해 공유하고 질문하는 고필성입니다.</p>
+          <p></p><br/>
+          <p></p>
         </v-card-title>
         <v-card-text>
-          <h3>코드로 대화하고 싶은 개발자</h3>
-          <p>오늘도 한 걸음.</p>
+          <h3></h3>
+          <p></p>
 
           <hr class="my-3">
           <a
