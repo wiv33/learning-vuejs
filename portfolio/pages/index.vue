@@ -7,8 +7,8 @@
       </div>
       <v-card>
         <v-card-title class="headline">
-          <p></p><br/>
-          <p></p>
+          <p>풍성한 지식을 위한 문화</p><br/>
+          <p>하브루타 문화를 형성하고,<br/>구성원 전체의 성장을 도모하는 사람</p>
         </v-card-title>
         <v-card-text>
           <h3></h3>
