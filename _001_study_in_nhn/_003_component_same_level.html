@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component same level</title>
+</head>
+<body>
+<div id="app">
+    <app-header></app-header>
+    <app-content></app-content>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+
+<script>
+
+    const appHeader = {
+        template: '<div>header</div>'
+    }
+
+    let appContent = {
+        template: `<div>content</div>`
+    }
+
+    new Vue({
+        el: '#app'
+        ,
+        components: {
+            'app-header': appHeader,
+            'app-content': appContent
+        },
+        data() {
+            return {
+                str: 'myyyyyyy'
+            }
+        }
+    })
+</script>
+</body>
+</html>
