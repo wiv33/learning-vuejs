@@ -6,19 +6,25 @@
 </head>
 <body>
 <div id="app">
-    <app-header></app-header>
-    <app-content></app-content>
+    <app-header v-bind:propsdata="num"></app-header>
+    <app-content v-on:pass="deliverNum"></app-content>
 </div>
 <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
 
 <script>
 
     const appHeader = {
-        template: '<div>header</div>'
+        template: '<div>header {{ propsdata }}</div>',
+        props: ['propsdata']
     }
 
-    let appContent = {
-        template: `<div>content</div>`
+    const appContent = {
+        template: `<div>content<button v-on:click="passNum">pass</button> </div>`,
+        methods: {
+            passNum() {
+                this.$emit('pass', 10);
+            }
+        }
     }
 
     new Vue({
@@ -28,9 +34,14 @@
             'app-header': appHeader,
             'app-content': appContent
         },
+        methods: {
+            deliverNum(payload) {
+                this.num = payload
+            }
+        },
         data() {
             return {
-                str: 'myyyyyyy'
+                num: 0
             }
         }
     })
