@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue data binding</title>
+</head>
+<body>
+  <div id="app">
+    <p v-bind:id="uuid">{{num}}</p>
+    <p :class="name">{{doubleNum}}</p>
+    <button v-on:click="checkedLogin = !checkedLogin">login</button>
+    <div v-if="checkedLogin">Loading...</div>
+    <div v-else>test user has been logged in</div>
+    <div v-show="checkedLogin">Loading...</div>
+
+    <label>
+      <input type="text" v-model="myTxt">
+    </label>
+    <p>{{ myTxt }}</p>
+
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          num: 10,
+          uuid: 'ababab1234',
+          name: 'text-blue',
+          checkedLogin: false,
+          myTxt: 'hello world??'
+        }
+      },
+      computed: {
+        doubleNum() {
+          return this.num * 2;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
