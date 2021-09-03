@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue computed for class</title>
+  <style>
+    .warning {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+<!--  <p :class="{warning: isError }">Hello world</p>-->
+  <p :class="errorTextColor">Hello world</p>
+  <button v-on:click="isError = !isError">clicked</button>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+<script>
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        cname: 'blue-text',
+        isError: false
+      }
+    },
+    computed: {
+      errorTextColor() {
+        return this.isError ? 'warning' : null
+      }
+    }
+  })
+</script>
+</body>
+</html>

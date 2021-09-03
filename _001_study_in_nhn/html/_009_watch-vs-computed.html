@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue watch vs computed</title>
+</head>
+<body>
+<div id="app">
+    {{ num }}
+    {{ doubleNum }}
+    <input type="text" v-model="num">
+</div>
+
+<script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                num: 10
+            }
+        },
+        methods: {
+            fetchUserByNumber(num) {
+                console.log(num);
+            }
+        },
+        computed: {
+            doubleNum() {
+                return this.num * 2;
+            }
+        },
+        watch: {
+            num(newValue, oldValue) {
+                console.log('new', newValue, 'old', oldValue);
+                this.fetchUserByNumber(newValue);
+            }
+        },
+    })
+</script>
+
+</body>
+</html>
